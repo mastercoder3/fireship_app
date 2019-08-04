@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "961224040960",
+    "firebase_url": "https://fireship-f56f2.firebaseio.com",
+    "project_id": "fireship-f56f2",
+    "storage_bucket": "fireship-f56f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961224040960:android:5f5b42a2a44155c3",
+        "android_client_info": {
+          "package_name": "com.practice.fireship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961224040960-01b165dk32fjrqrrqv9g00m7l19r5if9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.practice.fireship",
+            "certificate_hash": "7a00a29967c473fa18c3384d820f8b8cb0670aaf"
+          }
+        },
+        {
+          "client_id": "961224040960-offak17ulmaptc6vkg3a5c54cqf5ej83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY0nD29XghVZyYmYJhpl_J2xZcqGpf6WA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961224040960-offak17ulmaptc6vkg3a5c54cqf5ej83.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961224040960-9qhckrk4srlgc8p2cipdud9pmrlp0uol.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.practice.fireship"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
