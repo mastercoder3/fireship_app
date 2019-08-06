@@ -11,14 +11,23 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             brightness: Brightness.dark, accentColor: Colors.redAccent),
         home: Scaffold(
-          appBar: AppBar(title: Text('Junaid Rocks.'),),
+          appBar: AppBar(
+            title: Text('Junaid Rocks.'),
+          ),
 
           body: Container(
             margin: const EdgeInsets.only(top: 40.0),
-            height: 100,
+            height: 190,
             padding: const EdgeInsets.only(left: 150.0),
             alignment: Alignment.centerLeft,
-            color: Colors.blueAccent,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(width: 2, color: Colors.greenAccent),
+                // boxShadow:[
+                //   BoxShadow(offset: Offset(40,40), color: Colors.white)
+                // ],
+                gradient: LinearGradient(colors: [Colors.red, Colors.yellow])
+                ),
             child: Icon(
               Icons.computer,
               size: 100,
@@ -31,11 +40,9 @@ class MyApp extends StatelessWidget {
           //   child: Icon(Icons.computer, size: 100, color: Colors.blueAccent,),
           // ),
 
-
           // body: Align(
           //   alignment: Alignment.bottomLeft,
           //   child: Icon(Icons.cake, size: 70, color: Colors.redAccent,),
-
 
           //   // child: Platform.isAndroid
           //   //     ? Switch(
@@ -47,9 +54,10 @@ class MyApp extends StatelessWidget {
           //   //         onChanged: (v) => null,
           //   //       ),
           // ),
-          floatingActionButton: FloatingActionButton(child:  Icon(Icons.cake),onPressed: () {
-
-          },),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.cake),
+            onPressed: () {},
+          ),
           drawer: Drawer(),
         ));
   }
