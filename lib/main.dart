@@ -12,23 +12,43 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark, accentColor: Colors.redAccent),
         home: Scaffold(
           appBar: AppBar(title: Text('Junaid Rocks.'),),
-          body: Center(
 
-            child: Icon(Icons.cake),
-
-
-            // child: Platform.isAndroid
-            //     ? Switch(
-            //         value: true,
-            //         onChanged: (v) => null,
-            //       )
-            //     : CupertinoSwitch(
-            //         value: true,
-            //         onChanged: (v) => null,
-            //       ),
+          body: Container(
+            margin: const EdgeInsets.only(top: 40.0),
+            height: 100,
+            padding: const EdgeInsets.only(left: 150.0),
+            alignment: Alignment.centerLeft,
+            color: Colors.blueAccent,
+            child: Icon(
+              Icons.computer,
+              size: 100,
+              color: Colors.redAccent,
+            ),
           ),
+
+          // body: Padding(
+          //   padding: const EdgeInsets.all(15.0),
+          //   child: Icon(Icons.computer, size: 100, color: Colors.blueAccent,),
+          // ),
+
+
+          // body: Align(
+          //   alignment: Alignment.bottomLeft,
+          //   child: Icon(Icons.cake, size: 70, color: Colors.redAccent,),
+
+
+          //   // child: Platform.isAndroid
+          //   //     ? Switch(
+          //   //         value: true,
+          //   //         onChanged: (v) => null,
+          //   //       )
+          //   //     : CupertinoSwitch(
+          //   //         value: true,
+          //   //         onChanged: (v) => null,
+          //   //       ),
+          // ),
           floatingActionButton: FloatingActionButton(child:  Icon(Icons.cake),onPressed: () {
-          
+
           },),
           drawer: Drawer(),
         ));
