@@ -8,19 +8,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(
+            brightness: Brightness.dark, accentColor: Colors.redAccent),
         home: Scaffold(
-      body: Center(
-        child: Platform.isAndroid
-            ? Switch(
-                value: true,
-                onChanged: (v) => null,
-              )
-            : CupertinoSwitch(
-                value: true,
-                onChanged: (v) => null,
-              ),
-      ),
-    ));
+          appBar: AppBar(title: Text('Junaid Rocks.'),),
+          body: Center(
+
+            child: Icon(Icons.cake),
+
+
+            // child: Platform.isAndroid
+            //     ? Switch(
+            //         value: true,
+            //         onChanged: (v) => null,
+            //       )
+            //     : CupertinoSwitch(
+            //         value: true,
+            //         onChanged: (v) => null,
+            //       ),
+          ),
+          floatingActionButton: FloatingActionButton(child:  Icon(Icons.cake),onPressed: () {
+          
+          },),
+          drawer: Drawer(),
+        ));
   }
 }
 
