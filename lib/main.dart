@@ -15,23 +15,18 @@ class MyApp extends StatelessWidget {
             title: Text('Junaid Rocks.'),
           ),
 
-          body: Container(
-            margin: const EdgeInsets.only(top: 40.0),
-            height: 190,
-            padding: const EdgeInsets.only(left: 150.0),
-            alignment: Alignment.centerLeft,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(width: 2, color: Colors.greenAccent),
-                // boxShadow:[
-                //   BoxShadow(offset: Offset(40,40), color: Colors.white)
-                // ],
-                gradient: LinearGradient(colors: [Colors.red, Colors.yellow])
+          body: Center(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                      child: Text(
+                    'Hello Junaid, how are you.',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                  )),
                 ),
-            child: Icon(
-              Icons.computer,
-              size: 100,
-              color: Colors.redAccent,
+              ],
             ),
           ),
 
@@ -60,6 +55,34 @@ class MyApp extends StatelessWidget {
           ),
           drawer: Drawer(),
         ));
+  }
+}
+
+class MyContainer extends StatelessWidget {
+  const MyContainer({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 40.0),
+      height: 190,
+      padding: const EdgeInsets.only(left: 150.0),
+      alignment: Alignment.centerLeft,
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(width: 2, color: Colors.greenAccent),
+          // boxShadow:[
+          //   BoxShadow(offset: Offset(40,40), color: Colors.white)
+          // ],
+          gradient: LinearGradient(colors: [Colors.red, Colors.yellow])),
+      child: Icon(
+        Icons.computer,
+        size: 100,
+        color: Colors.redAccent,
+      ),
+    );
   }
 }
 
