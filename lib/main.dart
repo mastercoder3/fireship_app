@@ -16,19 +16,33 @@ class MyApp extends StatelessWidget {
           ),
 
           body: Center(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                      child: Text(
-                    'Hello Junaid, how are you.',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-                  )),
+            child: Material(
+              color: Colors.red,
+              child: InkWell(
+                onTap: () => print('Button pressed!'),
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  // color: Colors.red,
                 ),
-              ],
+              ),
             ),
           ),
+
+          // body: Center(
+          //   child: Row(
+          //     children: <Widget>[
+          //       Expanded(
+          //         child: Container(
+          //             child: Text(
+          //           'Hello Junaid, how are you.',
+          //           overflow: TextOverflow.ellipsis,
+          //           style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+          //         )),
+          //       ),
+          //     ],
+          //   ),
+          // ),
 
           // body: Padding(
           //   padding: const EdgeInsets.all(15.0),
