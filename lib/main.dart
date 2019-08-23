@@ -15,20 +15,43 @@ class MyApp extends StatelessWidget {
             title: Text('Junaid Rocks.'),
           ),
 
-          body: SizedBox.expand(
-            child: Stack(
-              children: <Widget>[
-                Align(
-                    alignment: Alignment.center,
-                    child: Icon(Icons.camera, color: Colors.red, size: 100)),
-                Icon(Icons.camera, color: Colors.green, size: 100),
-                Positioned(
-                    bottom: 0,
-                    child: (Icon(Icons.camera,
-                        color: Colors.blueGrey, size: 100))),
-              ],
-            ),
-          ),
+
+        // body: ListView(
+        //         scrollDirection: Axis.vertical,
+        //         children: _cards(),
+        //       ),
+
+        // body: ListView.builder(itemBuilder: (context, idx){
+        //   return Container(
+        //     color: Colors.blue,
+        //     margin: const EdgeInsets.all(20),
+        //     height: 100,
+        //     child: Text('$idx'),
+        //   );
+        // },
+        // ),
+
+        body: GridView.count(
+          crossAxisCount: 2,
+          children: _cards(),
+        ),
+
+          
+
+          // body: SizedBox.expand(
+          //   child: Stack(
+          //     children: <Widget>[
+          //       Align(
+          //           alignment: Alignment.center,
+          //           child: Icon(Icons.camera, color: Colors.red, size: 100)),
+          //       Icon(Icons.camera, color: Colors.green, size: 100),
+          //       Positioned(
+          //           bottom: 0,
+          //           child: (Icon(Icons.camera,
+          //               color: Colors.blueGrey, size: 100))),
+          //     ],
+          //   ),
+          // ),
 
           // body: Container(
           //   color: Colors.blue,
@@ -100,6 +123,16 @@ class MyApp extends StatelessWidget {
           drawer: Drawer(),
         ));
   }
+
+    List<Widget> _cards() {
+      return [1,2,3,4,5,6,7,8,9].map((v) => Container(
+          color: Colors.blue,
+          margin: EdgeInsets.all(20),
+          height: 100,
+          child: Text('$v'),
+        )
+      ).toList();
+    }
 }
 
 class MyContainer extends StatelessWidget {
