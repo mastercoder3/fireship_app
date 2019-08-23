@@ -15,21 +15,35 @@ class MyApp extends StatelessWidget {
             title: Text('Junaid Rocks.'),
           ),
 
-
-          body: Container(
-            color: Colors.blue,
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              // mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+          body: SizedBox.expand(
+            child: Stack(
               children: <Widget>[
-                Icon(Icons.cake, color: Colors.red, size: 50),
-                Icon(Icons.cake, color: Colors.red, size: 100),
-                Icon(Icons.cake, color: Colors.red, size: 200)
+                Align(
+                    alignment: Alignment.center,
+                    child: Icon(Icons.camera, color: Colors.red, size: 100)),
+                Icon(Icons.camera, color: Colors.green, size: 100),
+                Positioned(
+                    bottom: 0,
+                    child: (Icon(Icons.camera,
+                        color: Colors.blueGrey, size: 100))),
               ],
             ),
           ),
+
+          // body: Container(
+          //   color: Colors.blue,
+          //   padding: const EdgeInsets.all(16),
+          //   child: Column(
+          //     // mainAxisSize: MainAxisSize.min,
+          //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //     crossAxisAlignment: CrossAxisAlignment.stretch,
+          //     children: <Widget>[
+          //       Icon(Icons.cake, color: Colors.red, size: 50),
+          //       Icon(Icons.cake, color: Colors.red, size: 100),
+          //       Icon(Icons.cake, color: Colors.red, size: 200)
+          //     ],
+          //   ),
+          // ),
 
           // body: Center(
           //   child: Material(
