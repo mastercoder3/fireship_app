@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io' show Platform;
@@ -15,6 +17,10 @@ class MyApp extends StatelessWidget {
             title: Text('Junaid Rocks.'),
           ),
 
+        body: Center(
+          child: MyAnimation(),
+        ) ,
+
 
         // body: ListView(
         //         scrollDirection: Axis.vertical,
@@ -31,10 +37,10 @@ class MyApp extends StatelessWidget {
         // },
         // ),
 
-        body: GridView.count(
-          crossAxisCount: 2,
-          children: _cards(),
-        ),
+        // body: GridView.count(
+        //   crossAxisCount: 2,
+        //   children: _cards(),
+        // ),
 
           
 
@@ -133,6 +139,47 @@ class MyApp extends StatelessWidget {
         )
       ).toList();
     }
+}
+
+class MyAnimation extends StatefulWidget {
+  const MyAnimation({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  _MyAnimationState createState() => _MyAnimationState();
+}
+
+class _MyAnimationState extends State<MyAnimation> {
+
+  double width = 100;
+  double height = 100;
+  Color color = Colors.green;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+       duration: Duration(seconds: 1),
+       curve: Curves.elasticInOut,
+       color: color,
+       width: width,
+       height: height,
+       child: FlatButton(
+         child: Text('Animate me'),
+         onPressed: (){
+           setState(() {
+             width = Random().nextDouble() * 400;
+            height = Random().nextDouble() * 400;
+
+            int r = Random().nextInt(255);
+            int b = Random().nextInt(255);
+            int g = Random().nextInt(255);
+            color = Color.fromRGBO(r, b, g, 1); 
+           });
+         },
+       ),
+    );
+  }
 }
 
 class MyContainer extends StatelessWidget {
