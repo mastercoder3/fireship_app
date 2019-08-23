@@ -15,19 +15,35 @@ class MyApp extends StatelessWidget {
             title: Text('Junaid Rocks.'),
           ),
 
-          body: Center(
-            child: Material(
-              color: Colors.red,
-              child: InkWell(
-                onTap: () => print('Button pressed!'),
-                child: Container(
-                  width: 50,
-                  height: 50,
-                  // color: Colors.red,
-                ),
-              ),
+
+          body: Container(
+            color: Colors.blue,
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              // mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Icon(Icons.cake, color: Colors.red, size: 50),
+                Icon(Icons.cake, color: Colors.red, size: 100),
+                Icon(Icons.cake, color: Colors.red, size: 200)
+              ],
             ),
           ),
+
+          // body: Center(
+          //   child: Material(
+          //     color: Colors.red,
+          //     child: InkWell(
+          //       onTap: () => print('Button pressed!'),
+          //       child: Container(
+          //         width: 50,
+          //         height: 50,
+          //         // color: Colors.red,
+          //       ),
+          //     ),
+          //   ),
+          // ),
 
           // body: Center(
           //   child: Row(
