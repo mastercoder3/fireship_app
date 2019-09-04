@@ -10,39 +10,49 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-            brightness: Brightness.dark, accentColor: Colors.redAccent),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Junaid Rocks.'),
-          ),
 
-        body: Center(
-          child: MyAnimation(),
-        ) ,
+      routes: {
+       '/home': (context) => HomeScreen(),
+      //  '/slideshow': (context) => SlideshowScreen()
+     },
 
+     home: HomeScreen(),
 
-        // body: ListView(
-        //         scrollDirection: Axis.vertical,
-        //         children: _cards(),
-        //       ),
+        // theme: ThemeData(
+        //     brightness: Brightness.dark,
+        //     accentColor: Colors.redAccent,
+        //     primaryColor: Colors.lightGreen,
+        //     textTheme: TextTheme(
+        //         body1: TextStyle(color: Colors.red, fontSize: 30),
+        //         headline: TextStyle(color: Colors.blue, fontSize: 70))),
+        // home: Scaffold(
+        //   appBar: AppBar(
+        //     title: Text('Junaid Rocks here.'),
+        //   ),
 
-        // body: ListView.builder(itemBuilder: (context, idx){
-        //   return Container(
-        //     color: Colors.blue,
-        //     margin: const EdgeInsets.all(20),
-        //     height: 100,
-        //     child: Text('$idx'),
-        //   );
-        // },
-        // ),
+        //   body: Center(
+        //     child: MyAnimation(),
+        //   ),
 
-        // body: GridView.count(
-        //   crossAxisCount: 2,
-        //   children: _cards(),
-        // ),
+          // body: ListView(
+          //         scrollDirection: Axis.vertical,
+          //         children: _cards(),
+          //       ),
 
-          
+          // body: ListView.builder(itemBuilder: (context, idx){
+          //   return Container(
+          //     color: Colors.blue,
+          //     margin: const EdgeInsets.all(20),
+          //     height: 100,
+          //     child: Text('$idx'),
+          //   );
+          // },
+          // ),
+
+          // body: GridView.count(
+          //   crossAxisCount: 2,
+          //   children: _cards(),
+          // ),
 
           // body: SizedBox.expand(
           //   child: Stack(
@@ -122,23 +132,25 @@ class MyApp extends StatelessWidget {
           //   //         onChanged: (v) => null,
           //   //       ),
           // ),
-          floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.cake),
-            onPressed: () {},
-          ),
-          drawer: Drawer(),
-        ));
+          // floatingActionButton: FloatingActionButton(
+          //   child: Icon(Icons.cake),
+          //   onPressed: () {},
+          // ),
+          // drawer: Drawer(),
+        //)
+        );
   }
 
-    List<Widget> _cards() {
-      return [1,2,3,4,5,6,7,8,9].map((v) => Container(
-          color: Colors.blue,
-          margin: EdgeInsets.all(20),
-          height: 100,
-          child: Text('$v'),
-        )
-      ).toList();
-    }
+  List<Widget> _cards() {
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        .map((v) => Container(
+              color: Colors.blue,
+              margin: EdgeInsets.all(20),
+              height: 100,
+              child: Text('$v'),
+            ))
+        .toList();
+  }
 }
 
 class MyAnimation extends StatefulWidget {
@@ -151,7 +163,6 @@ class MyAnimation extends StatefulWidget {
 }
 
 class _MyAnimationState extends State<MyAnimation> {
-
   double width = 100;
   double height = 100;
   Color color = Colors.green;
@@ -159,25 +170,25 @@ class _MyAnimationState extends State<MyAnimation> {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-       duration: Duration(seconds: 1),
-       curve: Curves.elasticInOut,
-       color: color,
-       width: width,
-       height: height,
-       child: FlatButton(
-         child: Text('Animate me'),
-         onPressed: (){
-           setState(() {
-             width = Random().nextDouble() * 400;
+      duration: Duration(seconds: 1),
+      curve: Curves.elasticInOut,
+      color: color,
+      width: width,
+      height: height,
+      child: FlatButton(
+        child: Text('Animate me', style: Theme.of(context).textTheme.headline,),
+        onPressed: () {
+          setState(() {
+            width = Random().nextDouble() * 400;
             height = Random().nextDouble() * 400;
 
             int r = Random().nextInt(255);
             int b = Random().nextInt(255);
             int g = Random().nextInt(255);
-            color = Color.fromRGBO(r, b, g, 1); 
-           });
-         },
-       ),
+            color = Color.fromRGBO(r, b, g, 1);
+          });
+        },
+      ),
     );
   }
 }
@@ -211,18 +222,39 @@ class MyContainer extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    Key key,
-  }) : super(key: key);
+ @override
+ Widget build(BuildContext context) {
+   return Scaffold(
+     appBar: AppBar(title: Text('Home'), backgroundColor: Colors.red,),
+     body: Center(
+       child: Row(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: <Widget>[
+           FlatButton(child: Text('push'), color: Colors.green, onPressed: () {
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Text('Hello Junaid'),
-      ),
-    );
-  }
+             // Navigator.push(
+             //   context,
+             //   MaterialPageRoute(builder: (context) => SlideshowScreen(name: 'Jeff'))
+             // );
+
+
+           //  Navigator.pushNamed(
+           //     context,
+           //     '/slideshow'
+           //   );
+
+             Navigator.pushNamed(
+               context,
+               '/slideshow'
+             );
+
+           },),
+
+         ],
+       ),
+     ),
+   );
+ }
 }
 
 class MyFirstWidget extends StatefulWidget {
